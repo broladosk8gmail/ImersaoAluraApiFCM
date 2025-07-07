@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  api:
+    build: .
+    container_name: imersao_api
+    ports:
+      - "8000:8000"
+    volumes:
+      # Monta o diretório atual no container para desenvolvimento.
+      # Isso permite que as alterações no código sejam refletidas automaticamente
+      # (graças ao --reload no Dockerfile) e que o banco de dados SQLite
+      # (escola.db) seja salvo no seu computador.
+      - .:/app
